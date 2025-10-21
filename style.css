@@ -1,0 +1,93 @@
+/*
+  Royal Enfield Original Spare Parts - Light Theme
+  Fast-loading CSS with minimal dependencies and modern styling
+*/
+
+:root {
+  --bg: #ffffff;
+  --text: #1b1f23;
+  --muted: #6a737d;
+  --brand: #2c5530; /* olive green */
+  --brand-600: #234326;
+  --accent: #e8f1ea;
+  --border: #e1e4e8;
+  --shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+img { max-width: 100%; display: block; }
+.container { width: min(1100px, 92%); margin: 0 auto; }
+
+/* Header */
+.header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,0.9); backdrop-filter: saturate(180%) blur(10px); border-bottom: 1px solid var(--border); }
+.navbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 16px; }
+.nav-brand { display: flex; align-items: center; gap: 10px; }
+.logo { height: 36px; object-fit: contain; filter: saturate(0.9) contrast(1.05); }
+.nav-menu { list-style: none; display: flex; gap: 16px; margin: 0; padding: 0; }
+.nav-link { text-decoration: none; color: var(--text); padding: 8px 10px; border-radius: 8px; }
+.nav-link:hover { background: var(--accent); color: var(--brand); }
+.nav-actions { display: flex; align-items: center; gap: 8px; }
+.cart-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px; border: 1px solid var(--border); background: #fff; border-radius: 999px; cursor: pointer; box-shadow: var(--shadow); }
+.cart-count { background: var(--brand); color: #fff; font-size: 12px; line-height: 1; padding: 3px 7px; border-radius: 999px; }
+
+/* Hero */
+.hero { background: linear-gradient(180deg, #ffffff 0%, #f7faf8 100%); border-bottom: 1px solid var(--border); }
+.hero-content { padding: 56px 16px; text-align: center; }
+.hero h1 { font-size: clamp(28px, 4vw, 44px); margin: 0 0 10px; letter-spacing: -0.02em; }
+.hero p { color: var(--muted); margin: 0 0 20px; }
+.cta-btn { background: var(--brand); color: #fff; border: none; padding: 12px 18px; border-radius: 10px; cursor: pointer; box-shadow: var(--shadow); }
+.cta-btn:hover { background: var(--brand-600); }
+
+/* Sections */
+section { padding: 40px 0; }
+section h2 { text-align: center; margin: 0 0 24px; letter-spacing: -0.01em; }
+
+/* Products */
+.products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+.product-card { border: 1px solid var(--border); border-radius: 12px; padding: 12px; background: #fff; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+.product-card h3 { font-size: 16px; margin: 8px 0; }
+.price { font-weight: 600; color: var(--brand); }
+.add-btn { margin-top: auto; background: #fff; border: 1px solid var(--brand); color: var(--brand); padding: 8px 10px; border-radius: 8px; cursor: pointer; }
+.add-btn:hover { background: var(--accent); }
+
+/* About */
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.feature { border: 1px solid var(--border); border-radius: 12px; padding: 16px; background: #fff; }
+
+/* Contact */
+.contact .contact-info { text-align: center; color: var(--muted); }
+
+/* Modals */
+.modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); padding: 24px; }
+.modal.open { display: grid; place-items: center; }
+.modal-content { width: min(720px, 92%); background: #fff; border-radius: 14px; padding: 20px; box-shadow: var(--shadow); border: 1px solid var(--border); }
+.close { float: right; font-size: 24px; cursor: pointer; }
+.cart-total { margin-top: 12px; text-align: right; }
+.checkout-btn, .submit-btn { background: var(--brand); color: #fff; border: none; padding: 10px 14px; border-radius: 10px; cursor: pointer; }
+.checkout-btn:hover, .submit-btn:hover { background: var(--brand-600); }
+
+/* Forms */
+.form-group { margin: 12px 0; }
+.form-group label { display: block; margin: 0 0 6px; }
+.form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 10px; font: inherit; }
+
+/* Performance tips */
+/*
+ - Use preconnect for fonts
+ - Keep CSS concise and avoid heavy shadows/filters
+ - Responsive grid with minimal media queries
+*/
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
